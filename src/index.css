@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 14% 93%;
+    --secondary-foreground: 222 47% 15%;
+
+    --muted: 210 14% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 96%;
+    --accent-foreground: 217 91% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 14% 90%;
+    --input: 214 14% 90%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 20%;
+    --sidebar-primary: 222 47% 11%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 14% 91%;
+    --sidebar-ring: 217 91% 60%;
+
+    --surface: 210 20% 99%;
+    --surface-hover: 210 20% 96%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 40% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 40% 9%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 222 30% 15%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 217 50% 14%;
+    --accent-foreground: 217 91% 70%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 222 30% 16%;
+    --sidebar-ring: 217 91% 60%;
+
+    --surface: 222 40% 8%;
+    --surface-hover: 222 40% 12%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #020617 40%, #020617 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-app-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 40%, #020617 100%);
+  }
+
+  .bg-gradient-primary {
+    background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  }
+
+  .bg-gradient-accent {
+    background-image: linear-gradient(135deg, #22d3ee, #6366f1);
+  }
+
+  .header-glow {
+    background: radial-gradient(circle at top, rgba(99,102,241,0.15), transparent 60%);
+  }
+
+  .surface-gradient {
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-color: rgba(255,255,255,0.12);
+  }
+
+  .glass-nav {
+    background: rgba(2,6,23,0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(99,102,241,0.3);
+  }
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(217 91% 60%), hsl(239 84% 67%));
+  }
+
+  .bg-gradient-brand {
+    background-image: linear-gradient(135deg, hsl(217 91% 60%), hsl(239 84% 67%));
+  }
+
+  .shadow-brand {
+    box-shadow: 0 4px 20px -4px hsl(217 91% 60% / 0.3);
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 3px hsl(222 47% 11% / 0.06), 0 8px 24px hsl(222 47% 11% / 0.04);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 4px 12px hsl(222 47% 11% / 0.08), 0 16px 40px hsl(222 47% 11% / 0.06);
+  }
+
+  .glass {
+    backdrop-filter: blur(12px);
+    background-color: hsl(var(--card) / 0.8);
+  }
+
+  .border.bg-card {
+    border-color: rgba(255,255,255,0.12);
+  }
+
+  .bg-card {
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
